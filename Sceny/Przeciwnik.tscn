@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://iq0x4d13imi"]
+
+[ext_resource type="Script" path="res://Skrypty/Przeciwnik.cs" id="1_wx0h7"]
+[ext_resource type="PackedScene" uid="uid://cysry8oj6nrqw" path="res://assets/Przeciwnik/scene.gltf" id="2_3xwli"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eqcp0"]
+
+[node name="Przeciwnik" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0151416)
+script = ExtResource("1_wx0h7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.00783642, 0, -0.999969, 0, 1, 0, 0.999969, 0, -0.00783642, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_eqcp0")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_3xwli")]
+transform = Transform3D(-0.00783642, 0, -0.999969, 0, 1, 0, 0.999969, 0, -0.00783642, 0, -0.0338901, 0)
